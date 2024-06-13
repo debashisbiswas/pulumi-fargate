@@ -26,6 +26,9 @@ const service = new awsx.ecs.FargateService("service", {
             cpu: 128,
             memory: 512,
             essential: true,
+            environment: [{
+                name: 'ENV_MSG', value: 'hello from fargate'
+            }],
             portMappings: [
                 {
                     containerPort: 80,
